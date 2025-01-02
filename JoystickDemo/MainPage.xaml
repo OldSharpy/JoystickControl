@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:js="clr-namespace:JoystickControl;assembly=JoystickControl"
+             x:Class="JoystickDemo.MainPage">
+
+
+
+
+    <VerticalStackLayout VerticalOptions="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <js:Joystick x:Name="joystick" Grid.Row="0" HeightRequest="200"  JoystickMoved="joystick_JoystickMoved" />
+            <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center">
+                <Label Text="X: " />
+                <Label Text="{Binding X}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">
+                <Label Text="Y: " />
+                <Label Text="{Binding Y}" />
+            </HorizontalStackLayout>
+
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>
